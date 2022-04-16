@@ -41,7 +41,7 @@
                             <input type="text" name="ticket_url" class="form-control" placeholder="Ticket Link" required>
                         </div>
                     <div class="form-group">
-                        <label>Event Poster</label>
+                        <label>Event Description</label>
                         <textarea name="event_description" id="editor" rows="10"></textarea>
                     </div>
 
