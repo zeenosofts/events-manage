@@ -40,6 +40,11 @@ class EventController extends Controller
         return view('edit_events',compact('event'));
     }
 
+    public function delete_event(Request $request){
+        $event = Event::where('id',$request->id)->delete();
+        return back()->with('message',array('result' =>'Event deleted successfully','class' => 'success'));
+    }
+
     public function upload_image($file){
         $imageName = time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('images'), $imageName);

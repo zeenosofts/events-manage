@@ -88,5 +88,14 @@
             console.error( error );
         } );
     </script>
+    <script>
+        function confirmation(){
+            if(confirm('Are you sure to delete this event?')){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

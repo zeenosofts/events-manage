@@ -78,7 +78,10 @@
                                 <td>{{$event->event_date}}</td>
                                 <td>{{$event->event_title}}</td>
                                 <td>{{$event->event_city}}</td>
-                                <td><a href="{{route('edit-event',['id' => $event->id])}}" class="btn btn-primary">Edit</a></td>
+                                <td>
+                                    <a href="{{route('edit-event',['id' => $event->id])}}" class="btn btn-primary">Edit</a>
+                                    <a onclick="return confirmation();" href="{{route('delete-event',['id' => $event->id])}}" class="btn btn-danger">Delete</a>
+                                </td>
                             </tr>
                                 @endforeach
                             </tbody>
