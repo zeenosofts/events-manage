@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('event_date');
             $table->text('event_city');
             $table->text('event_address');
-            $table->text('event_poster');
-            $table->text('event_description');
+            $table->text('event_poster')->nullable();
+            $table->text('event_description')->nullable();
             $table->text('ticket_url');
             $table->timestamps();
         });

@@ -95,6 +95,23 @@
                     font-size: 32px;
                 }
             }
+            .page-link {
+                position: relative;
+                display: block;
+                color: #d70e1d;
+                text-decoration: none;
+                background-color: #fff;
+                border: 1px solid #dee2e6;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            }
+            .page-item.active .page-link {
+                z-index: 3;
+                color: #fff;
+                background-color: #d70e1d;
+                border-color: #d70e1d;
+            }
+
+
 
         </style>
     </head>
@@ -111,7 +128,7 @@
                     </h3>
                     <h6 class=" light-black">{{$event->event_address}}</h6>
                     <div class="margin-top">
-                        <a class="btn btn-danger">Buy Ticket</a>
+                        <a href="{{$event->ticket_url}}" target="_blank" class="btn btn-danger">Buy Ticket</a>
                     </div>
                 </div>
             </div>
@@ -119,6 +136,13 @@
         </div>
             @endforeach
     </div>
+    @if($type == 'full')
+    <div class="row">
+        <div class="col-lg-12">
+            {{$events->links('vendor.pagination.bootstrap-4')}}
+        </div>
+    </div>
+        @endif
 </div>
 </body>
 

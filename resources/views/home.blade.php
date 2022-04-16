@@ -32,10 +32,10 @@
                         <label>Event Address</label>
                         <input type="text" name="event_address" class="form-control" placeholder="Event Address" required>
                     </div>
-                    <div class="form-group">
-                        <label>Event Poster</label>
-                        <input type="file" name="event_poster" class="form-control" required>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label>Event Poster</label>--}}
+                        {{--<input type="file" name="event_poster" class="form-control" required>--}}
+                    {{--</div>--}}
                         <div class="form-group">
                             <label>Ticket URL</label>
                             <input type="text" name="ticket_url" class="form-control" placeholder="Ticket Link" required>
@@ -78,7 +78,7 @@
                                 <td>{{$event->event_date}}</td>
                                 <td>{{$event->event_title}}</td>
                                 <td>{{$event->event_city}}</td>
-                                <td><button class="btn btn-primary">Edit</button></td>
+                                <td><a href="{{route('edit-event',['id' => $event->id])}}" class="btn btn-primary">Edit</a></td>
                             </tr>
                                 @endforeach
                             </tbody>
