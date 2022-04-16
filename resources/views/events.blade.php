@@ -16,7 +16,7 @@
         <style>
             body {
                 font-family: 'Roboto', sans-serif;
-                background-color: #222222;
+                background-color: transparent;
             }
             .bold{
                 font-weight: bold;
