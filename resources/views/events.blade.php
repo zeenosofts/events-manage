@@ -61,6 +61,20 @@
                 padding-left: 25px !important;
                 padding-right: 25px !important;
             }
+
+            /* Extra small devices (phones, 600px and down) */
+            @media only screen and (max-width: 600px) {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+
+            /* Small devices (portrait tablets and large phones, 600px and up) */
+            @media only screen and (min-width: 600px) {
+                h3 {
+                    font-size: 17px;
+                }
+            }
         </style>
     </head>
 <body>
