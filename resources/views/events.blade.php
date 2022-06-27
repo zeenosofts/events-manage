@@ -122,13 +122,18 @@
         <div class="col-lg-6 col-12 ">
             <div class="event-box">
                 <div class="padding-right padding-top padding-bottom">
-                    <h6 class=" light-black">{{\Carbon\Carbon::parse($event->event_date)->format('F jS')}} {{$event->event_city}}</h6>
+                    <h6  class=" light-black">
+                        <span style="text-decoration: {{strstr($event->event_city,"Completed") ? 'line-through' : 'none'}};">{{\Carbon\Carbon::parse($event->event_date)->format('F jS')}} {{str_replace('(Completed)','',$event->event_city)}}</span>
+                        <span><b>{{strstr($event->event_city,"Completed") ? 'Completed' : 'Completed'}}</b></span>
+                    </h6>
                     <h3 class="white-text">
-                        {{$event->event_title}}
+                        <span style="text-decoration: {{strstr($event->event_city,"Completed") ? 'line-through' : 'none'}};">{{$event->event_title}}</span>
                     </h3>
-                    <h6 class=" light-black">{{$event->event_address}}</h6>
+                    <h6 class=" light-black">
+                        <span style="text-decoration: {{strstr($event->event_city,"Completed") ? 'line-through' : 'none'}};">{{$event->event_address}}
+                        </span></h6>
                     <div class="margin-top">
-                        <a href="{{$event->ticket_url}}" target="_blank" class="btn btn-danger">Buy Ticket</a>
+                        <a href="{{strstr($event->event_city,"Completed") ? '#' : $event->ticket_url}}" target="_blank" class="btn btn-danger">{{strstr($event->event_city,"Completed") ? 'Completed' : "Buy Ticket"}}</a>
                     </div>
                 </div>
             </div>
